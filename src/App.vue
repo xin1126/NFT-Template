@@ -1,5 +1,9 @@
 <template>
-  <main class="mx-auto flex h-screen max-w-[800px] flex-col justify-between pt-5">
-    <router-view />
-  </main>
+  <router-view />
 </template>
+
+<style>
+#app {
+  @apply bg-backound min-h-screen;
+}
+</style>
