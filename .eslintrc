@@ -1,4 +1,7 @@
 {
   "plugins": ["tailwindcss"],
-  "extends": ["@antfu", "plugin:tailwindcss/recommended"]
+  "extends": ["@antfu", "plugin:tailwindcss/recommended"],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off"
+  }
 }

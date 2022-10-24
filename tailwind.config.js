@@ -8,11 +8,18 @@ module.exports = {
     extend: {
       // 自訂顏色
       colors: {
-        primary: '#155e75',
-        secondary: '#6b21a8',
-        success: '#065f46',
-        warning: '#d97706',
-        danger: '#991b1b',
+        primary: '#E6553B',
+        secondary: '#808080',
+        backound: '#F0F0F0',
+      },
+    },
+    container: {
+      center: true,
+      screens: {
+        '2xl': '1440px',
+      },
+      padding: {
+        DEFAULT: '1rem',
       },
     },
   },
