@@ -1,0 +1,24 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.web.json",
+    "include": [
+        "auto-imports.d.ts",
+        "components.d.ts",
+        "env.d.ts",
+        "src/**/*",
+        "src/**/*.vue"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "types": ["vite-plugin-pages/client"],
+        "isolatedModules": false
+    },
+
+    "references": [
+        {
+            "path": "./tsconfig.config.json"
+        }
+    ]
+}
