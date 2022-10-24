@@ -1,11 +1,1 @@
-# 初始模板
-
-- Vue3
-- Vue Router
-- Vite
-- TypeScript
-- TailwindCSS
-- Pinia
-- ESlint
-- unplugin-vue-components
-- unplugin-auto-import
+# NFT藝術家交易平台 TailwindCSS切版練習
