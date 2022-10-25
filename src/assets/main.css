@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Squada+One&display=swap');
+
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
 
+@layer base {
+  h2 {
+    @apply xl:text-5xl lg:text-3xl text-2xl
+  }
+
+  h3 {
+    @apply xl:text-[32px] lg:text-3xl text-2xl
+  }
+
+  img {
+    @apply object-cover
+  }
+}
+
 @layer components {
   .flex-center {
     @apply flex justify-center items-center;
+  }
+}
+
+@layer utilities {
+  .text-vertical {
+    writing-mode: vertical-rl;
   }
 }
