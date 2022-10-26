@@ -16,10 +16,10 @@ module.exports = {
     container: {
       center: true,
       screens: {
-        '2xl': '1440px',
+        '2xl': '1300px',
       },
       padding: {
-        DEFAULT: '1rem',
+        DEFAULT: '12px',
       },
     },
   },
