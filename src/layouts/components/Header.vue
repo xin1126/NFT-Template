@@ -11,18 +11,22 @@ const handelSearch = () => {
 </script>
 
 <template>
-  <div class="fixed w-full border-black bg-backound xl:border-b-2">
+  <div class="fixed z-50 w-full border-black bg-backound xl:border-b-2">
     <div class="container flex w-full justify-between border-b-2 border-black bg-backound xl:border-0 ">
       <img
-        class="w-[85px] py-4 xl:w-[190px] xl:py-8"
+        class="h-full w-[85px] py-4 xl:w-[190px] xl:py-8"
         :class="{ hidden: search }"
         src="/images/logo.svg"
         alt="logo"
       >
       <ul class="hidden text-2xl font-bold xl:flex">
         <li class="flex-center h-full border-l-2 border-black px-12">
-          <span class="mr-[120px] text-secondary">搜尋作品名稱、藝術家名稱</span>
-          <i class="fa-sharp fa-solid fa-magnifying-glass" />
+          <input
+            type="text"
+            placeholder="搜尋作品名稱、藝術家名稱"
+            class="w-[200px] bg-transparent text-3xl font-normal placeholder:text-base placeholder:text-secondary focus:outline-0"
+          >
+          <i class="fa-sharp fa-solid fa-magnifying-glass ml-[120px]" />
         </li>
         <li class="flex-center h-full border-l-2 border-black px-12">
           探索
@@ -99,16 +103,16 @@ const handelSearch = () => {
         "
         :class="{ '!top-12': menu }"
       >
-        <li class="mb-6 border-b-2 border-black py-6">
+        <li class="mb-6 border-b-2 border-black pb-6 pt-8 text-center">
           <a href="#">探索</a>
         </li>
-        <li class="mb-6">
+        <li class="mb-6 text-center">
           <a href="#">市值</a>
         </li>
         <li>
           <a
             href="#"
-            class="mb-6 block border border-black bg-primary py-[14px] text-white"
+            class="mb-6 block border border-black bg-primary py-[14px] text-center text-white"
           >連結錢包</a>
         </li>
       </ul>
