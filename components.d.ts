@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     About: typeof import('./src/pages/about/index.vue')['default']
     AddCount: typeof import('./src/pages/about/components/AddCount.vue')['default']
+    Artist: typeof import('./src/pages/home/components/Artist.vue')['default']
     Banner: typeof import('./src/pages/home/components/banner/Banner.vue')['default']
     BigCard: typeof import('./src/pages/home/components/ranking/BigCard.vue')['default']
     Button: typeof import('./src/components/Button.vue')['default']
