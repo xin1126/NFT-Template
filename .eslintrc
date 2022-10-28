@@ -2,6 +2,7 @@
   "plugins": ["tailwindcss"],
   "extends": ["@antfu", "plugin:tailwindcss/recommended"],
   "rules": {
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "curly": "off"
   }
 }
