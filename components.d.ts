@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     Footer: typeof import('./src/layouts/components/Footer.vue')['default']
     Header: typeof import('./src/layouts/components/Header.vue')['default']
     Home: typeof import('./src/pages/home/index.vue')['default']
+    JoinUs: typeof import('./src/pages/home/components/JoinUs.vue')['default']
     Ranking: typeof import('./src/pages/home/components/Ranking.vue')['default']
     ReduceCount: typeof import('./src/pages/about/components/ReduceCount.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
