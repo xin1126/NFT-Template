@@ -1,9 +1,12 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
+
 const cardProps = defineProps({
   layout: {
     type: String,
     default: 'main',
   },
+
 })
 
 const cardStatus = computed(() => cardProps.layout === 'main')

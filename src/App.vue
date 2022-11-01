@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+import useInnerWidth from '@/store/innerWidth'
+
+const innerWidthStore = useInnerWidth()
+innerWidthStore.setInnerWidth()
+</script>
+
 <template>
   <router-view />
 </template>
