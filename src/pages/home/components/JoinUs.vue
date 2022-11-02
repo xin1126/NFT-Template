@@ -29,8 +29,8 @@ const data = [{
     <p class="mb-4 text-2xl  sm:mb-8">
       創建並出售你的藝術品
     </p>
-    <div class="border-y-4 border-black py-1">
-      <div class="border-y-2 border-black">
+    <div class="border-t-4 border-black py-1">
+      <div class="border-t-2 border-black">
         <ul class="container justify-between py-12 lg:flex lg:py-20">
           <li v-for="(item, index) in data" :key="item.title" class="lg:mb-0" :class="{ 'mb-12': data.length !== index + 1 }">
             <div>

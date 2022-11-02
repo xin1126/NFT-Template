@@ -1,5 +1,7 @@
 <template>
-  <footer class="py-3 text-center font-medium text-black">
-    © ART NFT. All Rights Reserved
+  <footer class=" border-t-2 border-black text-center font-medium text-black">
+    <p class="mt-1 border-t-4 border-black py-3">
+      © ART NFT. All Rights Reserved
+    </p>
   </footer>
 </template>

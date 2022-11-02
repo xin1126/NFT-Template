@@ -13,12 +13,14 @@ const handelSearch = () => {
 <template>
   <div class="fixed z-50 w-full border-black bg-backound xl:border-b-2">
     <div class="container flex w-full justify-between border-b-2 border-black bg-backound xl:border-0 ">
-      <img
-        class="h-full w-[85px] py-4 xl:w-[190px] xl:py-8"
-        :class="{ hidden: search }"
-        src="/images/logo.svg"
-        alt="logo"
-      >
+      <router-link to="/">
+        <img
+          class="h-full w-[85px] cursor-pointer py-4 xl:w-[190px] xl:py-8"
+          :class="{ hidden: search }"
+          src="/images/logo.svg"
+          alt="logo"
+        >
+      </router-link>
       <ul class="hidden text-2xl font-bold xl:flex">
         <li class="flex-center h-full border-l-2 border-black px-12">
           <input
@@ -29,7 +31,9 @@ const handelSearch = () => {
           <i class="fa-sharp fa-solid fa-magnifying-glass ml-[120px]" />
         </li>
         <li class="flex-center h-full border-l-2 border-black px-12">
-          探索
+          <router-link to="/explore" class="mr-5 hover:text-primary">
+            探索
+          </router-link>
         </li>
         <li class="flex-center h-full border-l-2 border-black px-12">
           市值

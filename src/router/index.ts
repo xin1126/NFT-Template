@@ -13,9 +13,9 @@ const routes = [
         component: () => import('../pages/home/index.vue'),
       },
       {
-        path: 'about',
-        name: 'about',
-        component: () => import('../pages/about/index.vue'),
+        path: 'explore',
+        name: 'explore',
+        component: () => import('../pages/explore/index.vue'),
       },
     ],
   },
