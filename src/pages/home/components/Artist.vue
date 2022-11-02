@@ -19,11 +19,11 @@ window.onresize = () => {
   innerWidth.value = window.innerWidth
   if (innerWidth.value < 1280) {
     swiperSlideTarget.value = 0
-    resetSwiperPC.value++
+    resetSwiperMobile.value++
   }
   else {
     swiperSlideTarget.value = 1
-    resetSwiperMobile.value++
+    resetSwiperPC.value++
   }
 }
 
@@ -41,7 +41,20 @@ const onSwiperPC = (swiper: SwiperCore) => {
   }
 }
 
-const swiperRight = computed(() => swiperSlideTarget.value === 0 ? '100px' : swiperSlideTarget.value === 1 ? '0' : `${-80 * swiperSlideTarget.value}px`)
+const swiperRight = computed(() => {
+  switch (swiperSlideTarget.value) {
+    case 0:
+      return '120px'
+    case 1:
+      return '0'
+    case 2:
+      return '-95px'
+    case 3:
+      return '-220px'
+    case 4:
+      return '-330px'
+  }
+})
 const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value ? '!w-[640px] !h-[400px]' : '!w-[310px] !h-[260px] grayscale'
 </script>
 
