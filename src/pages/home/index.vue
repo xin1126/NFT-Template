@@ -4,5 +4,4 @@
   <Artist class="mb-10 md:mb-20" />
   <Artwork class="mb-10 md:mb-20" />
   <JoinUs />
-  <footer />
 </template>
