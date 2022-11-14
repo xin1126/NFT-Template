@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 const data = [{
   title: '設置你的錢包',
   text: '設置好您選擇的錢包後<br/>點擊右上角的錢包圖標進行連接',

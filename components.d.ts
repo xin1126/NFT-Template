@@ -7,17 +7,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    About: typeof import('./src/pages/artistDetail/components/About.vue')['default']
     AboutArtist: typeof import('./src/pages/artistDetail/components/AboutArtist.vue')['default']
-    AddCount: typeof import('./src/pages/about/components/AddCount.vue')['default']
     Artist: typeof import('./src/pages/home/components/Artist.vue')['default']
     ArtistDetail: typeof import('./src/pages/artistDetail/index.vue')['default']
     Artwork: typeof import('./src/pages/home/components/Artwork.vue')['default']
     Banner: typeof import('./src/pages/home/components/banner/Banner.vue')['default']
-    BigCard: typeof import('./src/pages/home/components/ranking/BigCard.vue')['default']
     Button: typeof import('./src/components/Button.vue')['default']
     Card: typeof import('./src/pages/home/components/banner/Card.vue')['default']
-    Default: typeof import('./src/layouts/default.vue')['default']
     Explore: typeof import('./src/pages/explore/index.vue')['default']
     Footer: typeof import('./src/layouts/components/Footer.vue')['default']
     Header: typeof import('./src/layouts/components/Header.vue')['default']
@@ -25,11 +21,8 @@ declare module '@vue/runtime-core' {
     JoinUs: typeof import('./src/pages/home/components/JoinUs.vue')['default']
     Masonry: typeof import('./src/components/Masonry.vue')['default']
     Ranking: typeof import('./src/pages/home/components/Ranking.vue')['default']
-    ReduceCount: typeof import('./src/pages/about/components/ReduceCount.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SmallCard: typeof import('./src/pages/home/components/ranking/SmallCard.vue')['default']
-    Test: typeof import('./src/components/Test.vue')['default']
     Undefined: typeof import('./src/layouts/index.vue')['default']
     Works: typeof import('./src/pages/artistDetail/components/Works.vue')['default']
   }
