@@ -14,9 +14,7 @@ const onSlideChange = ({ activeIndex }: { activeIndex: number }) => {
 
 const resetSwiperMobile = ref(0)
 const resetSwiperPC = ref(0)
-innerWidth.value = window.innerWidth
-window.onresize = () => {
-  innerWidth.value = window.innerWidth
+watch(innerWidth, () => {
   if (innerWidth.value < 1280) {
     swiperSlideTarget.value = 0
     resetSwiperMobile.value++
@@ -25,7 +23,7 @@ window.onresize = () => {
     swiperSlideTarget.value = 1
     resetSwiperPC.value++
   }
-}
+})
 
 const onSwiperMobile = (swiper: SwiperCore) => {
   if (innerWidth.value < 1280) {
@@ -56,6 +54,8 @@ const swiperRight = computed(() => {
   }
 })
 const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value ? '!w-[640px] !h-[400px]' : '!w-[310px] !h-[260px] grayscale'
+
+const router = useRouter()
 </script>
 
 <template>
@@ -85,7 +85,7 @@ const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value 
               喜愛大自然，創作題材常見大山、大水、花草與樹木。
             </p>
             <div>
-              <Button class="bg-white" />
+              <Button class="bg-white" @click="router.push(`artistDetail/artist0${item}`)" />
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value 
             Antony Wu
           </p>
           <div class="self-end p-2">
-            <Button class="bg-white" />
+            <Button class="bg-white" @click="router.push(`artistDetail/artist0${item}`)" />
           </div>
         </div>
       </SwiperSlide>

@@ -17,6 +17,11 @@ const routes = [
         name: 'explore',
         component: () => import('../pages/explore/index.vue'),
       },
+      {
+        path: 'artistDetail/:img',
+        name: 'artistDetail',
+        component: () => import('../pages/artistDetail/index.vue'),
+      },
     ],
   },
 ]

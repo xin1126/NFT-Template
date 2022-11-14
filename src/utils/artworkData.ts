@@ -53,25 +53,25 @@ export const other = [
   {
     title: '野小孩——叫你不要玩那個',
     num: '19',
-    height: 'h-[382px]',
+    height: 'sm:h-[382px] h-[189px]',
     mobileHidden: false,
   },
   {
     title: '柔美的細胞小將',
     num: '16',
-    height: 'h-[302px]',
+    height: 'sm:h-[302px] h-[167px]',
     mobileHidden: false,
   },
   {
     title: '心如止水——今天吃素',
     num: '15',
-    height: 'h-[374px]',
+    height: 'sm:h-[374px] h-[167px]',
     mobileHidden: false,
   },
   {
     title: '每當夏天我吹著溫暖的風',
     num: '06',
-    height: 'h-[388px]',
+    height: 'sm:h-[388px] h-[189px]',
     mobileHidden: false,
   },
 ]
