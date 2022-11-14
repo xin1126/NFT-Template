@@ -1,0 +1,1 @@
+import{a as o,i as t,o as s}from"./artworkData.0cc6b47b.js";import{d as n,x as c,o as r,c as _,e as m,j as i}from"./index.ddf73b11.js";const d={class:"container"},h=n({__name:"index",setup(p){const e=c(()=>[...t,...s]);return(l,f)=>{const a=o;return r(),_("div",d,[m(a,{data:i(e)},null,8,["data"])])}}});export{h as default};
