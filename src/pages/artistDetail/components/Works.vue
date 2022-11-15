@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import items from '@/utils/artworkData'
+import handleImg from '@/utils/handleImg'
 import useInnerWidth from '@/store/innerWidth'
 
 const innerWidthStore = useInnerWidth()
@@ -67,7 +68,7 @@ watch(innerWidth, () => {
             class="h-[270px] w-full border-8 border-black sm:w-[263px]"
             :class="{ 'mr-2': index + 1 !== works.length }"
           >
-            <img :src="`/images/art${item}.jpg`" alt="works" class="h-full w-full">
+            <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
         </ul>
         <div class="mt-4 mb-8 text-center sm:hidden">
@@ -100,7 +101,7 @@ watch(innerWidth, () => {
             class="h-[270px] w-full border-8 border-black sm:w-[263px]"
             :class="{ 'mr-2': index + 1 !== collection.length }"
           >
-            <img :src="`/images/art${item}.jpg`" alt="works" class="h-full w-full">
+            <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
         </ul>
         <div class="mt-4 mb-8 text-center sm:hidden">

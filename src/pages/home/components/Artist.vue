@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type SwiperCore from 'swiper'
 import useInnerWidth from '@/store/innerWidth'
+import handleImg from '@/utils/handleImg'
 import 'swiper/css'
 
 const innerWidthStore = useInnerWidth()
@@ -74,7 +75,7 @@ const router = useRouter()
     >
       <SwiperSlide class="opacity-0" />
       <SwiperSlide v-for="item in 5" :key="item" :class="[swiperSlideStyle(item)]" class="relative cursor-grab">
-        <img :src="`/images/artist0${item}.jpg`" alt="art" class="duration-300" :class="[swiperSlideStyle(item)]">
+        <img :src="handleImg(`artist0${item}.jpg`)" alt="art" class="duration-300" :class="[swiperSlideStyle(item)]">
         <div :class="{ hidden: item - 1 !== swiperSlideTarget }" class="absolute top-0 flex h-full w-full flex-col justify-between p-6">
           <div class="fon-bold text-6xl text-white">
             <p>Antony</p>
@@ -100,7 +101,7 @@ const router = useRouter()
       @slide-change="onSlideChange"
     >
       <SwiperSlide v-for="item in 5" :key="item" class="relative cursor-grab">
-        <img :src="`/images/artist0${item}.jpg`" alt="art" class="h-[232px] w-full">
+        <img :src="handleImg(`artist0${item}.jpg`)" alt="art" class="h-[232px] w-full">
         <div class="absolute top-0 flex h-full w-full justify-between">
           <p class="fon-bold whitespace-nowrap p-6 text-3xl text-white">
             Antony Wu

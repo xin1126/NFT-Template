@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import handleImg from '@/utils/handleImg'
+
 const rankingData = ref([{
   title: '散步遇到的女人',
   en: 'Zoe Jiang',
@@ -56,7 +58,7 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
           <span class="flex-center absolute z-10 h-[64px] w-[64px] border-r-2 border-b-2 border-black bg-white font-mono text-[32px] font-bold">
             {{ index + 1 }}
           </span>
-          <img :src="`/images/${item.img}.jpg`" class="h-[375px] w-[415px] object-top" alt="art">
+          <img :src="handleImg(`${item.img}.jpg`)" class="h-[375px] w-[415px] object-top" alt="art">
           <div class="absolute top-0 h-full w-full duration-700 group-hover:bg-black/50">
             <div class="flex h-full items-end justify-end opacity-0 duration-700 group-hover:opacity-100">
               <Button class="group-hover:bg-primary group-hover:text-white" />
@@ -82,7 +84,7 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
           {{ index + 1 }}
         </p>
         <div class="relative">
-          <img :src="`/images/${item.img}.jpg`" class="h-[90px] w-[120px]" alt="art">
+          <img :src="handleImg(`${item.img}.jpg`)" class="h-[90px] w-[120px]" alt="art">
           <div class="absolute top-0 h-full w-full overflow-hidden duration-700 group-hover:bg-black/50">
             <div class="flex-center h-full opacity-0 duration-700 group-hover:opacity-100">
               <p class="text-white">

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import handleImg from '@/utils/handleImg'
 const route = useRoute()
 </script>
 
@@ -7,7 +8,7 @@ const route = useRoute()
   <section class="container">
     <div class="sm:flex">
       <div class="mb-4 sm:mb-0 xl:flex">
-        <img :src="`/images/${route.params.img}.jpg`" alt="artist" class="h-[285px] w-full">
+        <img :src="handleImg(`${route.params.img}.jpg`)" alt="artist" class="h-[285px] w-full">
         <div class="border-2 border-t-0 border-black bg-white p-4 sm:p-6 xl:border-l-0 xl:border-t-2">
           <div class="mb-4 flex justify-between">
             <h3 class="text-5xl">

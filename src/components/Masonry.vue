@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import handleImg from '@/utils/handleImg'
 import useInnerWidth from '@/store/innerWidth'
 
 defineProps({
@@ -19,7 +20,7 @@ const columnWidth = computed(() => innerWidth.value > 1024 ? 306 : innerWidth.va
     <template #default="{ item }">
       <div :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block">
         <div class="relative mb-4 border-[8px] border-white bg-white sm:border-[24px]" :class="[item.height]">
-          <img :src="`/images/art${item.num}.jpg`" alt="art" class="h-full w-full">
+          <img :src="handleImg(`art${item.num}.jpg`)" alt="art" class="h-full w-full">
           <div class="absolute top-0 left-0 hidden h-full w-full items-center justify-center duration-700 group-hover:bg-black/50 lg:flex">
             <div class="flex h-[90%] w-[90%] flex-col justify-between border-2 border-white p-4 opacity-0 duration-700 group-hover:opacity-100">
               <div>

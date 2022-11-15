@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 const route = useRoute()
 watch(() => route.path, () => document.documentElement.scrollTop = 0)
 </script>
