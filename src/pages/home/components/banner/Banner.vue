@@ -9,7 +9,7 @@
         </p>
       </div>
       <img class="w-full md:h-[360px] md:w-[50%] xl:h-[500px] xl:w-[756px]" src="@/assets/images/art01.jpg" alt="art">
-      <Card layout="main">
+      <Card layout="main" catena="eye">
         <template #en>
           Kemus Wu
         </template>
@@ -23,21 +23,21 @@
     </div>
     <div class="xl:flex">
       <div class="flex flex-col-reverse md:flex-row xl:w-2/4">
-        <Card layout="secondary">
+        <Card layout="secondary" catena="flower">
           <template #en>
             Joanne
           </template>
           <template #title>
-            海洋波度
+            不可預知的花
           </template>
           <template #text>
-            海洋的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。
+            花的奧秘向我們揭示了深不可測的一面，它的深度——反映了我們的恐懼、同時也吸引著我們。
           </template>
         </Card>
-        <img class="w-full border-black md:h-[360px] md:w-[50%] md:border-r-2 md:border-b-2 xl:border-r-0" src="@/assets/images/art02.jpg" alt="art">
+        <img class="w-full border-black md:h-[360px] md:w-[50%] md:border-r-2 md:border-b-2 xl:border-r-0" src="@/assets/images/art14.jpg" alt="art">
       </div>
       <div class="flex flex-col-reverse md:flex-row-reverse xl:w-2/4  xl:flex-row">
-        <Card layout="secondary">
+        <Card layout="secondary" catena="bird">
           <template #en>
             Michael
           </template>

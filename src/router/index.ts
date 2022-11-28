@@ -22,6 +22,11 @@ const routes = [
         name: 'artistDetail',
         component: () => import('../pages/artistDetail/index.vue'),
       },
+      {
+        path: 'catena/:type',
+        name: 'catena',
+        component: () => import('../pages/catena/index.vue'),
+      },
     ],
   },
 ]

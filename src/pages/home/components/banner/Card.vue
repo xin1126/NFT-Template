@@ -1,13 +1,18 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-
 const cardProps = defineProps({
   layout: {
     type: String,
     default: 'main',
   },
+  catena: {
+    type: String,
+    default: 'eye',
+  },
 
 })
+
+const router = useRouter()
 
 const cardStatus = computed(() => cardProps.layout === 'main')
 </script>
@@ -24,7 +29,7 @@ const cardStatus = computed(() => cardProps.layout === 'main')
       <slot name="text" />
     </p>
     <div class="right-6 bottom-6 py-6 text-end md:absolute md:p-0">
-      <Button />
+      <Button @click="router.push(`/catena/${catena}`)" />
     </div>
   </div>
 </template>
