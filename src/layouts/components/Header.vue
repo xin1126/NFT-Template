@@ -15,7 +15,7 @@ const handelSearch = () => {
     <div class="container flex w-full justify-between border-b-2 border-black bg-backound xl:border-0 ">
       <router-link to="/">
         <img
-          class="h-full w-[85px] cursor-pointer py-4 xl:w-[190px] xl:py-8"
+          class="h-full w-[60%] cursor-pointer py-4 xl:w-[190px] xl:py-8"
           :class="{ hidden: search }"
           src="/images/logo.svg"
           alt="logo"
