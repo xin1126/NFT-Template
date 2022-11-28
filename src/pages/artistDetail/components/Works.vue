@@ -66,7 +66,7 @@ watch(innerWidth, () => {
             v-show="index + 1 <= imgCount"
             :key="item"
             class="h-[270px] w-full border-8 border-black sm:w-[263px]"
-            :class="{ 'mr-2': index + 1 !== works.length }"
+            :class="{ 'sm-mr-2': index + 1 !== works.length }"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
@@ -99,7 +99,7 @@ watch(innerWidth, () => {
             v-show="index + 1 <= imgCount"
             :key="item"
             class="h-[270px] w-full border-8 border-black sm:w-[263px]"
-            :class="{ 'mr-2': index + 1 !== collection.length }"
+            :class="{ 'sm-mr-2': index + 1 !== collection.length }"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>

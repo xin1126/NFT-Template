@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import handleImg from '@/utils/handleImg'
 const route = useRoute()
 </script>
