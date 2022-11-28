@@ -62,7 +62,7 @@ const router = useRouter()
 <template>
   <div class="container">
     <div class="mb-6 flex justify-between border-b-2 border-black pb-3 md:mb-12">
-      <h2>Artist<span class="ml-4 text-xl font-bold">市價排行榜</span></h2>
+      <h2>Artist<span class="ml-4 text-xl font-bold">熱門藝術家</span></h2>
       <Button class="relative bottom-[-13px]" :border="false" />
     </div>
     <Swiper
