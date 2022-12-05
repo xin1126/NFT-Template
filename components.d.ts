@@ -28,7 +28,7 @@ declare module '@vue/runtime-core' {
     Ranking: typeof import('./src/pages/home/components/Ranking.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Sidebar: typeof import('./src/pages/catena/components/Sidebar.vue')['default']
+    Sidebar: typeof import('./src/pages/catena/components/CatenaSidebar.vue')['default']
     Undefined: typeof import('./src/layouts/index.vue')['default']
     Works: typeof import('./src/pages/artistDetail/components/Works.vue')['default']
   }

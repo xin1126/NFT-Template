@@ -75,9 +75,6 @@ const type = {
   ],
 }
 
-const eye = ['']
-const flower = ['']
-
 onMounted(() => {
   switch (route.params.type) {
     case 'eye':

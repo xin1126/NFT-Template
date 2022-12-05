@@ -12,7 +12,7 @@ defineProps({
 const innerWidthStore = useInnerWidth()
 const { innerWidth } = storeToRefs(innerWidthStore)
 
-const columnWidth = computed(() => innerWidth.value > 1024 ? 306 : innerWidth.value > 640 ? 200 : 156)
+const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.value > 640 ? 200 : 156)
 </script>
 
 <template>

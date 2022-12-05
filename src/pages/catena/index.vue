@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
-    <CatenaSidebar />
+  <div class="container flex items-start">
+    <CatenaSidebar class="mr-6" />
+    <CatenaDetail />
   </div>
 </template>
