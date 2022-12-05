@@ -14,8 +14,8 @@ const newType = computed(() => type[path.value as keyof CatenaType])
       <img class="mr-2 h-[32px] w-[32px] rounded-full" src="@/assets/images/artist01.jpg" alt="artist">
       <span>Michael</span>
     </div>
-    <div class="mb-10 flex">
-      <div class="mr-6">
+    <div class="mb-10 xl:flex">
+      <div class="mr-6 mb-4 xl:mb-0">
         <h2 class="mb-2 text-3xl font-bold">
           <template v-if="path === 'eye'">
             瞳孔:流動的脈絡
@@ -39,29 +39,29 @@ const newType = computed(() => type[path.value as keyof CatenaType])
           </template>
         </p>
       </div>
-      <ul class="flex bg-white">
-        <li class="relative flex h-[90] min-w-[104px] flex-col items-center justify-center border border-r-0 border-black">
+      <ul class="flex ">
+        <li class="relative flex w-full max-w-[104px] flex-col items-center justify-center border border-r-0 border-black bg-white py-4 md:min-w-[104px]">
           項目
           <p class="text-2xl font-bold">
             6.4k
           </p>
           <div class="absolute -right-1 z-10 h-[45px] w-[10px] bg-white" />
         </li>
-        <li class="relative flex h-[90] min-w-[104px] flex-col items-center justify-center border border-r-0 border-black">
+        <li class="relative flex w-full max-w-[104px] flex-col items-center justify-center border border-r-0 border-black bg-white py-4 md:min-w-[104px]">
           擁有者
           <p class="text-2xl font-bold">
             2.5 k
           </p>
           <div class="absolute -right-1 z-10 h-[45px] w-[10px] bg-white" />
         </li>
-        <li class="relative flex h-[90] min-w-[104px] flex-col items-center justify-center border border-r-0 border-black">
+        <li class="relative flex w-full max-w-[104px] flex-col items-center justify-center border border-r-0 border-black bg-white py-4 md:min-w-[104px]">
           底價
           <p class="text-2xl font-bold">
             <i class="fa-brands fa-ethereum text-sm" /> 1.38 k
           </p>
           <div class="absolute -right-1 z-10 h-[45px] w-[10px] bg-white" />
         </li>
-        <li class="flex h-[90] min-w-[104px] flex-col items-center justify-center border border-black">
+        <li class="flex w-full max-w-[104px] flex-col items-center justify-center border border-black bg-white py-4 md:min-w-[104px]">
           總額
           <p class="text-2xl font-bold">
             2.8 k

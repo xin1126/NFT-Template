@@ -5,6 +5,8 @@ const openTarger = ref(['currency', 'status', 'price', 'type'])
 
 const route = useRoute()
 
+const showSidebar = ref(false)
+
 const checkTarget = (data: string) => openTarger.value.includes(data)
 
 const handleTarget = (type: string) => {
@@ -93,7 +95,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-[306px] bg-white">
+  <div
+    class="fixed top-0 left-0 z-50 w-full bg-white md:static md:z-0 md:block md:max-w-[306px]"
+    :class="{ hidden: !showSidebar }"
+  >
+    <div>
+      <p class="border-b border-black py-4 text-center text-xl">
+        篩選條件<i class="fa-solid fa-xmark absolute right-2 top-5" @click="showSidebar = false" />
+      </p>
+    </div>
     <div class="border-b-2 border-gray-300">
       <div class="overflow-hidden px-6 pt-6 pb-2">
         <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('currency')">
@@ -167,5 +177,15 @@ onMounted(() => {
         </template>
       </div>
     </div>
+    <button class="md:hidden w-full border border-black bg-primary py-3 text-white" @click="showSidebar = false">
+      確認
+    </button>
   </div>
+  <button
+    type="button"
+    class="fixed -bottom-2 left-1/2 z-10 translate-x-[-50%] translate-y-[-50%] bg-black px-8 py-2 text-white md:hidden"
+    @click="showSidebar = true"
+  >
+    篩選條件2
+  </button>
 </template>
