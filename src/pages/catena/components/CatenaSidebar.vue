@@ -75,6 +75,8 @@ const type = {
   ],
 }
 
+const newType = computed(() => type[route.params.type as keyof CatenaType])
+
 onMounted(() => {
   switch (route.params.type) {
     case 'eye':
@@ -150,7 +152,7 @@ onMounted(() => {
         <p class="mb-6 font-bold text-gray-500">
           屬性
         </p>
-        <template v-for="item in type[route.params.type]" :key="item.type">
+        <template v-for="item in newType" :key="item.type">
           <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget(item.type)">
             <p class="font-bold">
               {{ item.title }}

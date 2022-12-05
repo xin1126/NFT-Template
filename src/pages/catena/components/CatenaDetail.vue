@@ -4,6 +4,8 @@ import * as type from '@/utils/catenaData'
 
 const route = useRoute()
 const path = computed(() => route.params.type)
+
+const newType = computed(() => type[path.value as keyof CatenaType])
 </script>
 
 <template>
@@ -84,6 +86,6 @@ const path = computed(() => route.params.type)
         </option>
       </select>
     </div>
-    <Masonry :data="type[path]" />
+    <Masonry :data="newType" />
   </div>
 </template>
