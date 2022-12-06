@@ -99,87 +99,89 @@ onMounted(() => {
     class="fixed top-0 left-0 z-50 w-full bg-white md:static md:z-0 md:block md:max-w-[306px]"
     :class="{ hidden: !showSidebar }"
   >
-    <div>
+    <div class="md:hidden">
       <p class="border-b border-black py-4 text-center text-xl">
         篩選條件<i class="fa-solid fa-xmark absolute right-2 top-5" @click="showSidebar = false" />
       </p>
     </div>
-    <div class="border-b-2 border-gray-300">
-      <div class="overflow-hidden px-6 pt-6 pb-2">
-        <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('currency')">
-          <p class="font-bold">
-            網路
-          </p>
-          <i
-            class="fa-solid fa-angle-down" :class="checkTarget('currency') && 'rotate-180'"
-          />
-        </div>
-        <div class="hidden" :class="checkTarget('currency') && '!block'">
-          <Checkbox>以太坊</Checkbox>
-          <Checkbox>BNB智能鏈</Checkbox>
-        </div>
-      </div>
-    </div>
-    <div class="border-b-2 border-gray-300">
-      <div class="px-6 pt-6 pb-2">
-        <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('status')">
-          <p class="font-bold">
-            狀態
-          </p>
-          <i class="fa-solid fa-angle-down" :class="checkTarget('status') && 'rotate-180'" />
-        </div>
-        <div class="hidden" :class="checkTarget('status') && '!block'">
-          <Checkbox>僅展示</Checkbox>
-          <Checkbox>拍賣中</Checkbox>
-        </div>
-      </div>
-    </div>
-    <div class="border-b-2 border-gray-300">
-      <div class="p-6" :class="{ 'pb-2': !checkTarget('price') }">
-        <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('price')">
-          <p class="font-bold">
-            價格
-          </p>
-          <i class="fa-solid fa-angle-down" :class="checkTarget('price') && 'rotate-180'" />
-        </div>
-        <div class="hidden items-center" :class="checkTarget('price') && '!flex'">
-          <select name="" class="mr-2 h-[40px] w-[75px] border border-black px-2 py-1">
-            <option value="ETH">
-              ETH
-            </option>
-            <option value="BTC">
-              BTC
-            </option>
-          </select>
-          <input type="text" name="" class="h-[40px] w-[75px] border border-black pl-2">
-          <span class="mx-2">－</span>
-          <input type="text" class="h-[40px] w-[75px] border border-black pl-2">
-        </div>
-      </div>
-    </div>
-    <div class="border-b-2 border-gray-300">
-      <div class="px-6 pt-6 pb-2">
-        <p class="mb-6 font-bold text-gray-500">
-          屬性
-        </p>
-        <template v-for="item in newType" :key="item.type">
-          <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget(item.type)">
+    <div class="h-[calc(100vh_-_60px)] overflow-y-auto md:h-auto">
+      <div class="border-b-2 border-gray-300">
+        <div class="overflow-hidden px-6 pt-6 pb-2">
+          <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('currency')">
             <p class="font-bold">
-              {{ item.title }}
+              網路
             </p>
-            <i class="fa-solid fa-angle-down" :class="checkTarget(item.type) && 'rotate-180'" />
+            <i
+              class="fa-solid fa-angle-down" :class="checkTarget('currency') && 'rotate-180'"
+            />
           </div>
-          <div class="mb-6 hidden" :class="checkTarget(item.type) && '!block'">
-            <Checkbox v-for="text in item.content" :key="text">
-              {{ text }}
-            </Checkbox>
+          <div class="hidden" :class="checkTarget('currency') && '!block'">
+            <Checkbox>以太坊</Checkbox>
+            <Checkbox>BNB智能鏈</Checkbox>
           </div>
-        </template>
+        </div>
       </div>
+      <div class="border-b-2 border-gray-300">
+        <div class="px-6 pt-6 pb-2">
+          <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('status')">
+            <p class="font-bold">
+              狀態
+            </p>
+            <i class="fa-solid fa-angle-down" :class="checkTarget('status') && 'rotate-180'" />
+          </div>
+          <div class="hidden" :class="checkTarget('status') && '!block'">
+            <Checkbox>僅展示</Checkbox>
+            <Checkbox>拍賣中</Checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="border-b-2 border-gray-300">
+        <div class="p-6" :class="{ 'pb-2': !checkTarget('price') }">
+          <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget('price')">
+            <p class="font-bold">
+              價格
+            </p>
+            <i class="fa-solid fa-angle-down" :class="checkTarget('price') && 'rotate-180'" />
+          </div>
+          <div class="hidden items-center" :class="checkTarget('price') && '!flex'">
+            <select name="" class="mr-2 h-[40px] w-[75px] border border-black px-2 py-1">
+              <option value="ETH">
+                ETH
+              </option>
+              <option value="BTC">
+                BTC
+              </option>
+            </select>
+            <input type="text" name="" class="h-[40px] w-[75px] border border-black pl-2">
+            <span class="mx-2">－</span>
+            <input type="text" class="h-[40px] w-[75px] border border-black pl-2">
+          </div>
+        </div>
+      </div>
+      <div class="border-b-2 border-gray-300">
+        <div class="px-6 pt-6 pb-2">
+          <p class="mb-6 font-bold text-gray-500">
+            屬性
+          </p>
+          <template v-for="item in newType" :key="item.type">
+            <div class="mb-3 flex cursor-pointer items-center justify-between" @click="handleTarget(item.type)">
+              <p class="font-bold">
+                {{ item.title }}
+              </p>
+              <i class="fa-solid fa-angle-down" :class="checkTarget(item.type) && 'rotate-180'" />
+            </div>
+            <div class="mb-6 hidden" :class="checkTarget(item.type) && '!block'">
+              <Checkbox v-for="text in item.content" :key="text">
+                {{ text }}
+              </Checkbox>
+            </div>
+          </template>
+        </div>
+      </div>
+      <button class="w-full border border-black bg-primary py-3 text-white md:hidden" @click="showSidebar = false">
+        確認
+      </button>
     </div>
-    <button class="md:hidden w-full border border-black bg-primary py-3 text-white" @click="showSidebar = false">
-      確認
-    </button>
   </div>
   <button
     type="button"

@@ -27,6 +27,11 @@ const routes = [
         name: 'catena',
         component: () => import('../pages/catena/index.vue'),
       },
+      {
+        path: 'productDetail/:img',
+        name: 'productDetail',
+        component: () => import('../pages/productDetail/index.vue'),
+      },
     ],
   },
 ]

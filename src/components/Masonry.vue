@@ -9,6 +9,8 @@ defineProps({
   },
 })
 
+const router = useRouter()
+
 const innerWidthStore = useInnerWidth()
 const { innerWidth } = storeToRefs(innerWidthStore)
 
@@ -32,7 +34,7 @@ const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.va
                 </p>
               </div>
               <div class="self-end">
-                <Button class="group-hover:bg-primary group-hover:text-white" />
+                <Button class="group-hover:bg-primary group-hover:text-white" @click="router.push(`/productDetail/${item.num}`)" />
               </div>
             </div>
           </div>

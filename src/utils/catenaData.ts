@@ -96,3 +96,30 @@ export const flower = [
     height: 'sm:h-[443px] h-[189px]',
   },
 ]
+
+export const miscellaneous = [
+  {
+    title: '十分鐘就到',
+    num: '03',
+  },
+  {
+    title: '每當夏天我吹著溫暖的風',
+    num: '06',
+  },
+  {
+    title: '藍色啤酒海',
+    num: '02',
+  },
+  {
+    title: '野小孩——叫你不要玩那個',
+    num: '19',
+  },
+  {
+    title: '區塊戀-他的私生活',
+    num: '09',
+  },
+  {
+    title: '柔美的細胞小將',
+    num: '16',
+  },
+]
