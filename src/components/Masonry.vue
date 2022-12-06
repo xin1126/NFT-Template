@@ -20,7 +20,7 @@ const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.va
 <template>
   <masonry-wall :items="data" :ssr-columns="1" :column-width="columnWidth" :gap="16">
     <template #default="{ item }">
-      <div :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block">
+      <div :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block" @click="router.push(`/productDetail/${item.num}`)">
         <div class="relative mb-4 border-[8px] border-white bg-white sm:border-[24px]" :class="[item.height]">
           <img :src="handleImg(`art${item.num}.jpg`)" alt="art" class="h-full w-full">
           <div class="absolute top-0 left-0 hidden h-full w-full items-center justify-center duration-700 group-hover:bg-black/50 lg:flex">
@@ -34,7 +34,7 @@ const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.va
                 </p>
               </div>
               <div class="self-end">
-                <Button class="group-hover:bg-primary group-hover:text-white" @click="router.push(`/productDetail/${item.num}`)" />
+                <Button class="group-hover:bg-primary group-hover:text-white" />
               </div>
             </div>
           </div>

@@ -14,14 +14,14 @@ const handleTarget = (type: string) => {
 </script>
 
 <template>
-  <div class="flex">
-    <div class="mr-6 w-1/2">
+  <div class="md:flex">
+    <div class="mb-6 md:mr-6 md:mb-0 md:w-1/2">
       <div
-        class="mb-6 h-[80px] overflow-hidden border-2 border-black bg-white"
+        class="mb-6 h-[56px] overflow-hidden border-2 border-black bg-white md:h-[80px]"
         :class="checkTarget('type') && '!h-fit'"
       >
         <div
-          class="flex cursor-pointer items-center justify-between border-black p-6"
+          class="flex cursor-pointer items-center justify-between border-black p-4 md:p-6"
           :class="checkTarget('type') && 'border-b-2'"
           @click="handleTarget('type')"
         >
@@ -30,7 +30,7 @@ const handleTarget = (type: string) => {
           </p>
           <i class="fa-solid fa-angle-down" :class="checkTarget('type') && 'rotate-180'" />
         </div>
-        <ul class="p-6">
+        <ul class="p-4 md:p-6">
           <li class="mb-2 flex justify-between border-b border-gray-300 pb-1">
             <p>品種</p>
             <p class="text-secondary">
@@ -58,11 +58,11 @@ const handleTarget = (type: string) => {
         </ul>
       </div>
       <div
-        class="h-[80px] overflow-hidden border-2 border-black bg-white"
+        class="h-[56px] overflow-hidden border-2 border-black bg-white md:h-[80px]"
         :class="checkTarget('info') && '!h-fit'"
       >
         <div
-          class="flex cursor-pointer items-center justify-between border-black p-6"
+          class="flex cursor-pointer items-center justify-between border-black p-4 md:p-6"
           :class="checkTarget('info') && 'border-b-2'"
           @click="handleTarget('info')"
         >
@@ -71,7 +71,7 @@ const handleTarget = (type: string) => {
           </p>
           <i class="fa-solid fa-angle-down" :class="checkTarget('info') && 'rotate-180'" />
         </div>
-        <ul class="p-6">
+        <ul class="p-4 md:p-6">
           <li class="mb-2 flex justify-between border-b border-gray-300 pb-1">
             <p>擁有者</p>
             <p class="text-secondary">
@@ -93,13 +93,13 @@ const handleTarget = (type: string) => {
         </ul>
       </div>
     </div>
-    <div class="w-1/2">
+    <div class="md:w-1/2">
       <div
-        class="mb-6 h-[80px] overflow-hidden border-2 border-black bg-white"
+        class="mb-6 h-[56px] overflow-hidden border-2 border-black bg-white md:h-[80px]"
         :class="checkTarget('bid') && '!h-fit'"
       >
         <div
-          class="flex cursor-pointer items-center justify-between border-black p-6"
+          class="flex cursor-pointer items-center justify-between border-black p-4 md:p-6"
           :class="checkTarget('bid') && 'border-b-2'"
           @click="handleTarget('bid')"
         >
@@ -108,7 +108,7 @@ const handleTarget = (type: string) => {
           </p>
           <i class="fa-solid fa-angle-down" :class="checkTarget('bid') && 'rotate-180'" />
         </div>
-        <ul class="p-6">
+        <ul class="p-4 md:p-6">
           <li class="flex bg-backound py-2 pl-4">
             <p class="w-1/2">
               價格
@@ -150,11 +150,11 @@ const handleTarget = (type: string) => {
         </ul>
       </div>
       <div
-        class="h-[80px] overflow-hidden border-2 border-black bg-white"
+        class="h-[56px] overflow-hidden border-2 border-black bg-white md:h-[80px]"
         :class="checkTarget('history') && '!h-fit'"
       >
         <div
-          class="flex cursor-pointer items-center justify-between border-black p-6"
+          class="flex cursor-pointer items-center justify-between border-black p-4 md:p-6"
           :class="checkTarget('history') && 'border-b-2'"
           @click="handleTarget('history')"
         >
@@ -163,11 +163,11 @@ const handleTarget = (type: string) => {
           </p>
           <i class="fa-solid fa-angle-down" :class="checkTarget('history') && 'rotate-180'" />
         </div>
-        <ul class="p-6">
+        <ul class="p-4 md:p-6">
           <li class="flex bg-backound py-2 pl-4">
-            <p class="w-1/2">
-              <span class="mr-12">事件</span>
-              <span class="mr-12">價格</span>
+            <p class="flex w-1/2">
+              <span class="mr-8 whitespace-nowrap md:mr-12">事件</span>
+              <span class="mr-8 whitespace-nowrap md:mr-12">價格</span>
               <span>從</span>
             </p>
             <p class="w-1/2 text-center">
@@ -176,12 +176,14 @@ const handleTarget = (type: string) => {
           </li>
           <li class="flex items-center border-b border-gray-300 py-2 pl-4">
             <div class="flex w-1/2 items-center">
-              <span class="mr-12">上架</span>
-              <span class="mr-12">2nb</span>
+              <span class="mr-8 whitespace-nowrap md:mr-12">上架</span>
+              <span class="mr-8 md:mr-12">2nb</span>
               <div class="flex items-center">
-                <img class="mr-2 h-[32px] w-[32px] rounded-full" src="@/assets/images/artist02.jpg" alt="artist">
-                <i class="fa-solid fa-arrow-right mr-2" />
-                <span>0.044Eth</span>
+                <img class="mr-2 h-[32px] w-[32px] min-w-[32px] rounded-full" src="@/assets/images/artist02.jpg" alt="artist">
+                <div class="hidden items-center md:flex">
+                  <i class="fa-solid fa-arrow-right mr-2" />
+                  <span>0.044Eth</span>
+                </div>
               </div>
             </div>
             <p class="w-1/2 text-center text-secondary">
@@ -190,12 +192,14 @@ const handleTarget = (type: string) => {
           </li>
           <li class="flex items-center border-b border-gray-300 py-2 pl-4">
             <div class="flex w-1/2 items-center">
-              <span class="mr-12">出價</span>
-              <span class="mr-12">2nb</span>
+              <span class="mr-8 whitespace-nowrap md:mr-12">出價</span>
+              <span class="mr-8 md:mr-12">2nb</span>
               <div class="flex items-center">
-                <img class="mr-2 h-[32px] w-[32px] rounded-full" src="@/assets/images/artist01.jpg" alt="artist">
-                <i class="fa-solid fa-arrow-right mr-2" />
-                <span>0.044Eth</span>
+                <img class="mr-2 h-[32px] w-[32px] min-w-[32px] rounded-full" src="@/assets/images/artist01.jpg" alt="artist">
+                <div class="hidden items-center md:flex">
+                  <i class="fa-solid fa-arrow-right mr-2" />
+                  <span>0.044Eth</span>
+                </div>
               </div>
             </div>
             <p class="w-1/2 text-center text-secondary">
