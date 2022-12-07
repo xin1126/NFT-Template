@@ -18,7 +18,6 @@ declare module '@vue/runtime-core' {
     CatenaDetail: typeof import('./src/pages/catena/components/CatenaDetail.vue')['default']
     CatenaSidebar: typeof import('./src/pages/catena/components/CatenaSidebar.vue')['default']
     Checkbox: typeof import('./src/components/Checkbox.vue')['default']
-    Detail: typeof import('./src/pages/catena/components/Detail.vue')['default']
     Explore: typeof import('./src/pages/explore/index.vue')['default']
     Footer: typeof import('./src/layouts/components/Footer.vue')['default']
     Header: typeof import('./src/layouts/components/Header.vue')['default']
@@ -33,7 +32,6 @@ declare module '@vue/runtime-core' {
     Ranking: typeof import('./src/pages/home/components/Ranking.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Sidebar: typeof import('./src/pages/catena/components/CatenaSidebar.vue')['default']
     Undefined: typeof import('./src/layouts/index.vue')['default']
     Works: typeof import('./src/pages/artistDetail/components/Works.vue')['default']
   }
