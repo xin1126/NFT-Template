@@ -26,6 +26,7 @@ declare module '@vue/runtime-core' {
     Info: typeof import('./src/pages/productDetail/components/Info.vue')['default']
     Introduce: typeof import('./src/pages/productDetail/components/Introduce.vue')['default']
     JoinUs: typeof import('./src/pages/home/components/JoinUs.vue')['default']
+    MarketPrice: typeof import('./src/pages/marketPrice/index.vue')['default']
     Masonry: typeof import('./src/components/Masonry.vue')['default']
     Other: typeof import('./src/pages/productDetail/components/Other.vue')['default']
     ProductDetail: typeof import('./src/pages/productDetail/index.vue')['default']

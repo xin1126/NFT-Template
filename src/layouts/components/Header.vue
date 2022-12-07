@@ -36,7 +36,9 @@ const handelSearch = () => {
           </router-link>
         </li>
         <li class="flex-center h-full border-l-2 border-black px-12">
-          市值
+          <router-link to="/marketPrice" class="mr-5 hover:text-primary">
+            市值
+          </router-link>
         </li>
         <li class="flex-center h-full border-l-2 border-black px-12">
           <i class="fa-solid fa-wallet" />
@@ -108,10 +110,14 @@ const handelSearch = () => {
         :class="{ '!top-12': menu }"
       >
         <li class="mb-6 border-b-2 border-black pb-6 pt-8 text-center">
-          <a href="#">探索</a>
+          <router-link to="/explore" @click="menu = false">
+            探索
+          </router-link>
         </li>
         <li class="mb-6 text-center">
-          <a href="#">市值</a>
+          <router-link to="/marketPrice" @click="menu = false">
+            市值
+          </router-link>
         </li>
         <li>
           <a

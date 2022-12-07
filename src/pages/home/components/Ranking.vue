@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import handleImg from '@/utils/handleImg'
 
+const router = useRouter()
+
 const rankingData = ref([{
   title: '散步遇到的女人',
   en: 'Zoe Jiang',
@@ -45,7 +47,7 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
   <div class="container">
     <div class="mb-6 flex justify-between border-b-2 border-black pb-3 md:mb-12">
       <h2>Ranking<span class="ml-4 text-xl font-bold">市價排行榜</span></h2>
-      <Button class="relative bottom-[-13px]" :border="false" />
+      <Button class="relative bottom-[-13px]" :border="false" @click="router.push('/marketPrice')" />
     </div>
     <ul class="mb-6 hidden md:flex">
       <li
@@ -53,6 +55,7 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
         :key="item.title"
         class="group cursor-pointer border-2 border-black"
         :class="{ 'mr-6 ': index !== 2 }"
+        @click="router.push('/marketPrice')"
       >
         <div class="relative">
           <span class="flex-center absolute z-10 h-[64px] w-[64px] border-r-2 border-b-2 border-black bg-white font-mono text-[32px] font-bold">
@@ -79,6 +82,7 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
         v-for="(item, index) in rankingData"
         :key="item.title" class="group mb-4 flex w-full cursor-pointer border-2 border-black md:mb-0 md:w-[415px]"
         :class="{ 'md:hidden': index < 3, 'md:mr-6': index !== 5 }"
+        @click="router.push('/marketPrice')"
       >
         <p class="flex-center bg-white py-6 px-4 font-mono text-2xl font-bold">
           {{ index + 1 }}

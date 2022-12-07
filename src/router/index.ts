@@ -18,6 +18,11 @@ const routes = [
         component: () => import('../pages/explore/index.vue'),
       },
       {
+        path: 'marketPrice',
+        name: 'marketPrice',
+        component: () => import('../pages/marketPrice/index.vue'),
+      },
+      {
         path: 'artistDetail/:img',
         name: 'artistDetail',
         component: () => import('../pages/artistDetail/index.vue'),
