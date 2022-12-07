@@ -5,6 +5,8 @@ import useInnerWidth from '@/store/innerWidth'
 import handleImg from '@/utils/handleImg'
 import 'swiper/css'
 
+const router = useRouter()
+
 const innerWidthStore = useInnerWidth()
 const { innerWidth } = storeToRefs(innerWidthStore)
 
@@ -21,7 +23,7 @@ watch(innerWidth, () => {
     resetSwiperMobile.value++
   }
   else {
-    swiperSlideTarget.value = 1
+    swiperSlideTarget.value = 0
     resetSwiperPC.value++
   }
 })
@@ -35,8 +37,8 @@ const onSwiperMobile = (swiper: SwiperCore) => {
 
 const onSwiperPC = (swiper: SwiperCore) => {
   if (innerWidth.value > 1280) {
-    swiperSlideTarget.value = 1
-    swiper.activeIndex = 1
+    swiperSlideTarget.value = 0
+    swiper.activeIndex = 0
   }
 }
 
@@ -54,9 +56,8 @@ const swiperRight = computed(() => {
       return '-330px'
   }
 })
-const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value ? '!w-[640px] !h-[400px]' : '!w-[310px] !h-[260px] grayscale'
 
-const router = useRouter()
+const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value ? '!w-[640px] !h-[400px]' : '!w-[310px] !h-[260px] grayscale'
 </script>
 
 <template>
