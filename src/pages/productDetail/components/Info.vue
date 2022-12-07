@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-const openTarger = ref(['type', 'bid', 'info', 'history'])
+const openTarget = ref(['type', 'bid', 'info', 'history'])
 
-const checkTarget = (data: string) => openTarger.value.includes(data)
+const checkTarget = (data: string) => openTarget.value.includes(data)
 
 const handleTarget = (type: string) => {
   if (checkTarget(type)) {
-    openTarger.value = openTarger.value.filter(item => item !== type)
+    openTarget.value = openTarget.value.filter(item => item !== type)
   }
   else {
-    openTarger.value.push(type)
+    openTarget.value.push(type)
   }
 }
 </script>

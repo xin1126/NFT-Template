@@ -1,20 +1,20 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
 
-const openTarger = ref(['currency', 'status', 'price', 'type'])
+const openTarget = ref(['currency', 'status', 'price', 'type'])
 
 const route = useRoute()
 
 const showSidebar = ref(false)
 
-const checkTarget = (data: string) => openTarger.value.includes(data)
+const checkTarget = (data: string) => openTarget.value.includes(data)
 
 const handleTarget = (type: string) => {
   if (checkTarget(type)) {
-    openTarger.value = openTarger.value.filter(item => item !== type)
+    openTarget.value = openTarget.value.filter(item => item !== type)
   }
   else {
-    openTarger.value.push(type)
+    openTarget.value.push(type)
   }
 }
 
@@ -82,13 +82,13 @@ const newType = computed(() => type[route.params.type as keyof CatenaType])
 onMounted(() => {
   switch (route.params.type) {
     case 'eye':
-      openTarger.value = [...openTarger.value, ...Object.keys(type.eye)]
+      openTarget.value = [...openTarget.value, ...Object.keys(type.eye)]
       break
     case 'bird':
-      openTarger.value = [...openTarger.value, ...Object.keys(type.bird)]
+      openTarget.value = [...openTarget.value, ...Object.keys(type.bird)]
       break
     case 'flower':
-      openTarger.value = [...openTarger.value, ...Object.keys(type.flower)]
+      openTarget.value = [...openTarget.value, ...Object.keys(type.flower)]
       break
   }
 })
