@@ -1,11 +1,18 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+const emit = defineEmits(['handleWallet'])
+
 const menu = ref(false)
 const search = ref(false)
 
 const handelSearch = () => {
   search.value = true
+  menu.value = false
+}
+
+const openWallet = () => {
+  emit('handleWallet', true)
   menu.value = false
 }
 </script>
@@ -40,8 +47,8 @@ const handelSearch = () => {
             市值
           </router-link>
         </li>
-        <li class="flex-center h-full border-l-2 border-black px-12">
-          <i class="fa-solid fa-wallet" />
+        <li class="flex-center h-full border-l-2 border-black px-12" @click="emit('handleWallet', true)">
+          <i class="fa-solid fa-wallet cursor-pointer hover:text-primary" />
         </li>
       </ul>
       <ul
@@ -119,7 +126,7 @@ const handelSearch = () => {
             市值
           </router-link>
         </li>
-        <li>
+        <li @click="openWallet()">
           <a
             href="#"
             class="mb-6 block border border-black bg-primary py-[14px] text-center text-white"

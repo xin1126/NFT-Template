@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Undefined: typeof import('./src/layouts/index.vue')['default']
+    Wallet: typeof import('./src/layouts/components/Wallet.vue')['default']
     Works: typeof import('./src/pages/artistDetail/components/Works.vue')['default']
   }
 }
