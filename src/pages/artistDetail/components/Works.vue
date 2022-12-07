@@ -3,6 +3,8 @@ import items from '@/utils/artworkData'
 import handleImg from '@/utils/handleImg'
 import useInnerWidth from '@/store/innerWidth'
 
+const router = useRouter()
+
 const innerWidthStore = useInnerWidth()
 const { innerWidth } = storeToRefs(innerWidthStore)
 
@@ -25,7 +27,7 @@ watch(innerWidth, () => {
   else {
     imgCount.value = 1
   }
-})
+}, { immediate: true })
 </script>
 
 <template>
@@ -57,7 +59,7 @@ watch(innerWidth, () => {
             我又沒有特別喜歡花，為什麼不給我現金就好，擺在那也不知道要幹嘛，只好畫起來看有沒有人要買，阿不然如果真的喜歡我，把這些都買回去八。
           </p>
           <div class="hidden sm:block">
-            <Button />
+            <Button @click="router.push(`/catena/flower`)" />
           </div>
         </div>
         <ul class="relative flex sm:bottom-[-48px]">
@@ -65,14 +67,14 @@ watch(innerWidth, () => {
             v-for="(item, index) in works"
             v-show="index + 1 <= imgCount"
             :key="item"
-            class="h-[270px] w-full border-8 border-black sm:w-[263px]"
+            class="h-[270px] w-full border-8 border-black sm:mr-2 sm:w-[263px]"
             :class="{ 'sm-mr-2': index + 1 !== works.length }"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
         </ul>
         <div class="mt-4 mb-8 text-center sm:hidden">
-          <Button />
+          <Button @click="router.push(`/catena/flower`)" />
         </div>
         <div class="absolute top-0 left-0 h-[40px] w-[30px] overflow-hidden">
           <div class="w-fll relative top-[-20px] right-[12px] h-full rotate-45 bg-black" />
@@ -90,7 +92,7 @@ watch(innerWidth, () => {
             家門前每天都有不同的小鳥，大多數的小鳥都有特殊能力，特殊能力是什麼我就不說了，希望大家能從作品感受到小鳥的快樂。
           </p>
           <div class="hidden sm:block">
-            <Button />
+            <Button @click="router.push(`/catena/bird`)" />
           </div>
         </div>
         <ul class="relative flex sm:bottom-[-48px]">
@@ -98,14 +100,14 @@ watch(innerWidth, () => {
             v-for="(item, index) in collection"
             v-show="index + 1 <= imgCount"
             :key="item"
-            class="h-[270px] w-full border-8 border-black sm:w-[263px]"
+            class="h-[270px] w-full border-8 border-black sm:mr-2 sm:w-[263px]"
             :class="{ 'sm-mr-2': index + 1 !== collection.length }"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
         </ul>
         <div class="mt-4 mb-8 text-center sm:hidden">
-          <Button />
+          <Button @click="router.push(`/catena/bird`)" />
         </div>
         <div class="absolute top-0 left-0 h-[40px] w-[30px] overflow-hidden">
           <div class="w-fll relative top-[-20px] right-[12px] h-full rotate-45 bg-black" />
