@@ -1,10 +1,19 @@
 <script lang="ts" setup>
+import type { PropType } from 'vue'
 import handleImg from '@/utils/handleImg'
 import useInnerWidth from '@/store/innerWidth'
 
-defineProps({
+interface Props {
+  title: string
+  num: string
+  height: string
+  mobileHidden?: boolean
+  dalay?: number
+}
+
+const props = defineProps({
   data: {
-    type: Array,
+    type: Array as PropType<Props[]>,
     default: () => [],
   },
 })
@@ -15,12 +24,23 @@ const innerWidthStore = useInnerWidth()
 const { innerWidth } = storeToRefs(innerWidthStore)
 
 const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.value > 640 ? 200 : 156)
+
+// 隨機亂數 delay 瀑布
+const newData = ref(props.data)
+const aosDelay = ref<number[]>([])
+props.data.forEach((item, index) => {
+  aosDelay.value.push((index + 1) * 200)
+})
+aosDelay.value.sort(() => Math.random() - 0.5)
+aosDelay.value.forEach((item, index) => {
+  newData.value[index].dalay = aosDelay.value[index]
+})
 </script>
 
 <template>
-  <masonry-wall :items="data" :ssr-columns="1" :column-width="columnWidth" :gap="16">
+  <masonry-wall :items="newData" :ssr-columns="1" :column-width="columnWidth" :gap="16">
     <template #default="{ item }">
-      <div :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block" @click="router.push(`/productDetail/${item.num}`)">
+      <div data-aos="zoom-in" data-aos-duration="2000" :data-aos-delay="item.dalay" :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block" @click="router.push(`/productDetail/${item.num}`)">
         <div class="relative mb-4 border-[8px] border-white bg-white sm:border-[24px]" :class="[item.height]">
           <img :src="handleImg(`art${item.num}.jpg`)" alt="art" class="h-full w-full">
           <div class="absolute top-0 left-0 hidden h-full w-full items-center justify-center duration-700 group-hover:bg-black/50 lg:flex">

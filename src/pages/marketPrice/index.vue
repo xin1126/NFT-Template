@@ -26,7 +26,7 @@ const handleTarget = (title: string) => {
     <p class="mb-8 font-sans font-semibold md:mb-12">
       NFT系列藝術作品排行榜！全球注目指標
     </p>
-    <table class="hidden table-auto md:block">
+    <table data-aos="fade-up" data-aos-duration="2000" class="hidden table-auto md:block">
       <thead>
         <tr>
           <th />
