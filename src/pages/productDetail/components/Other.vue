@@ -33,6 +33,18 @@ const onSlideChange = ({ activeIndex }: { activeIndex: number }) => {
   swiperSlideTarget.value = activeIndex + 1
 }
 
+const page = ref(0)
+const resetSwiper = ref(0)
+const onSwiper = (swiper: SwiperCore) => {
+  swiper.slideTo(page.value, 0, false)
+  swiperSlideTarget.value = page.value + 1
+}
+
+const handlePage = (num: number) => {
+  resetSwiper.value++
+  page.value = num
+}
+
 const otherData = computed(() => {
   let targetType = ''
   Object.keys(type).forEach((key) => {
@@ -54,8 +66,10 @@ const otherData = computed(() => {
     <Button class="relative bottom-[-13px]" :border="false" />
   </div>
   <Swiper
+    :key="resetSwiper"
     :slides-per-view="slidesPerView"
     :space-between="spaceBetween"
+    @swiper="onSwiper"
     @slide-change="onSlideChange"
   >
     <SwiperSlide v-for="item in otherData" :key="item.title" class="group relative cursor-grab">
@@ -85,6 +99,10 @@ const otherData = computed(() => {
     </SwiperSlide>
   </Swiper>
   <div class="mt-6 mb-10 flex justify-center md:mb-0 xl:mt-12">
-    <div v-for="item in slidesPerPage" :key="item" class="mr-2 h-[8px] w-[8px] bg-black" :class="[swiperSlideTarget === item ? 'w-[16px] !bg-primary' : '']" />
+    <div
+      v-for="item in slidesPerPage" :key="item" class="mr-2 h-[8px] w-[8px] cursor-pointer bg-black"
+      :class="[swiperSlideTarget === item ? 'w-[16px] !bg-primary' : '']"
+      @click="handlePage(item - 1)"
+    />
   </div>
 </template>

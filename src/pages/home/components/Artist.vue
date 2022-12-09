@@ -28,18 +28,10 @@ watch(innerWidth, () => {
   }
 })
 
-const onSwiperMobile = (swiper: SwiperCore) => {
-  if (innerWidth.value < 1280) {
-    swiperSlideTarget.value = 0
-    swiper.activeIndex = 0
-  }
-}
-
-const onSwiperPC = (swiper: SwiperCore) => {
-  if (innerWidth.value > 1280) {
-    swiperSlideTarget.value = 0
-    swiper.activeIndex = 0
-  }
+const page = ref(0)
+const onSwiper = (swiper: SwiperCore) => {
+  swiper.slideTo(page.value, 0, false)
+  swiperSlideTarget.value = page.value
 }
 
 const swiperRight = computed(() => {
@@ -57,6 +49,16 @@ const swiperRight = computed(() => {
   }
 })
 
+const handlePage = (num: number) => {
+  if (innerWidth.value < 1280) {
+    resetSwiperMobile.value++
+  }
+  else {
+    resetSwiperPC.value++
+  }
+  page.value = num
+}
+
 const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value ? '!w-[640px] !h-[400px]' : '!w-[310px] !h-[260px] grayscale'
 </script>
 
@@ -71,7 +73,7 @@ const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value 
       :slides-per-view="3"
       :space-between="10"
       class="onSwiperPC hidden xl:block"
-      @swiper="onSwiperPC"
+      @swiper="onSwiper"
       @slide-change="onSlideChange"
     >
       <SwiperSlide class="opacity-0" />
@@ -98,7 +100,7 @@ const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value 
       :key="resetSwiperMobile"
       :space-between="10"
       class="xl:hidden"
-      @swiper="onSwiperMobile"
+      @swiper="onSwiper"
       @slide-change="onSlideChange"
     >
       <SwiperSlide v-for="item in 5" :key="item" class="relative cursor-grab">
@@ -117,7 +119,11 @@ const swiperSlideStyle = (item: number) => item - 1 === swiperSlideTarget.value 
       喜愛大自然，創作題材常見大山、大水、花草與樹木。
     </p>
     <div class="mt-6 flex justify-center xl:mt-12">
-      <div v-for="item in 5" :key="item" class="mr-2 h-[8px] w-[8px] bg-black" :class="[swiperSlideTarget === item - 1 ? 'w-[16px] !bg-primary' : '']" />
+      <div
+        v-for="item in 5" :key="item" class="mr-2 h-[8px] w-[8px] cursor-pointer bg-black"
+        :class="[swiperSlideTarget === item - 1 ? 'w-[16px] !bg-primary' : '']"
+        @click="handlePage(item - 1)"
+      />
     </div>
   </div>
 </template>
