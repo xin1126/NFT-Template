@@ -1,6 +1,6 @@
 <template>
   <div class="md:container">
-    <div data-aos="fade-right" data-aos-duration="3000" class="md:flex">
+    <div class="md:flex">
       <div class="hidden bg-black xl:block">
         <p
           class="text-vertical flex items-center p-6 text-[48px] text-white"
@@ -22,7 +22,7 @@
       </Card>
     </div>
     <div class="xl:flex">
-      <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col-reverse md:flex-row xl:w-2/4">
+      <div class="flex flex-col-reverse md:flex-row xl:w-2/4">
         <Card layout="secondary" catena="flower">
           <template #en>
             Joanne
@@ -36,7 +36,7 @@
         </Card>
         <img class="w-full border-black md:h-[360px] md:w-[50%] md:border-r-2 md:border-b-2 xl:border-r-0" src="@/assets/images/art14.jpg" alt="art">
       </div>
-      <div data-aos="fade-left" data-aos-duration="3000" class="flex flex-col-reverse md:flex-row-reverse xl:w-2/4  xl:flex-row">
+      <div class="flex flex-col-reverse md:flex-row-reverse xl:w-2/4  xl:flex-row">
         <Card layout="secondary" catena="bird">
           <template #en>
             Michael

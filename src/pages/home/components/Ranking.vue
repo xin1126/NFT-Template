@@ -55,6 +55,9 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
         :key="item.title"
         class="group cursor-pointer border-2 border-black"
         :class="{ 'mr-6 ': index !== 2 }"
+        data-aos="fade-up"
+        :data-aos-duration="1000"
+        :data-aos-delay="index * 200"
         @click="router.push('/marketPrice')"
       >
         <div class="relative">
@@ -82,6 +85,9 @@ const newRankingData = computed(() => [...rankingData.value].slice(0, 3))
         v-for="(item, index) in rankingData"
         :key="item.title" class="group mb-4 flex w-full cursor-pointer border-2 border-black md:mb-0 md:w-[415px]"
         :class="{ 'md:hidden': index < 3, 'md:mr-6': index !== 5 }"
+        data-aos="fade-up"
+        :data-aos-duration="1000"
+        :data-aos-delay="index * 200"
         @click="router.push('/marketPrice')"
       >
         <p class="flex-center bg-white py-6 px-4 font-mono text-2xl font-bold">

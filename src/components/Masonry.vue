@@ -25,11 +25,16 @@ const { innerWidth } = storeToRefs(innerWidthStore)
 
 const columnWidth = computed(() => innerWidth.value > 1024 ? 250 : innerWidth.value > 640 ? 200 : 156)
 
+const aosStatus = ref('zoom-in')
+watch(innerWidth, () => {
+  aosStatus.value = innerWidth.value > 1200 ? 'zoom-in' : 'fade-up'
+})
+
 // 隨機亂數 delay 瀑布
 const newData = ref(props.data)
 const aosDelay = ref<number[]>([])
 props.data.forEach((item, index) => {
-  aosDelay.value.push((index + 1) * 200)
+  aosDelay.value.push((index + 1) * 100)
 })
 aosDelay.value.sort(() => Math.random() - 0.5)
 aosDelay.value.forEach((item, index) => {
@@ -40,7 +45,7 @@ aosDelay.value.forEach((item, index) => {
 <template>
   <masonry-wall :items="newData" :ssr-columns="1" :column-width="columnWidth" :gap="16">
     <template #default="{ item }">
-      <div data-aos="zoom-in" data-aos-duration="2000" :data-aos-delay="item.dalay" :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block" @click="router.push(`/productDetail/${item.num}`)">
+      <div :data-aos="aosStatus" data-aos-duration="500" :data-aos-delay="item.dalay" :class="{ hidden: item.mobileHidden }" class="group cursor-pointer sm:block" @click="router.push(`/productDetail/${item.num}`)">
         <div class="relative mb-4 border-[8px] border-white bg-white sm:border-[24px]" :class="[item.height]">
           <img :src="handleImg(`art${item.num}.jpg`)" alt="art" class="h-full w-full">
           <div class="absolute top-0 left-0 hidden h-full w-full items-center justify-center duration-700 group-hover:bg-black/50 lg:flex">

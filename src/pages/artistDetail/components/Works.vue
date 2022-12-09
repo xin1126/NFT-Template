@@ -69,6 +69,9 @@ watch(innerWidth, () => {
             :key="item"
             class="h-[270px] w-full border-8 border-black sm:mr-2 sm:w-[263px]"
             :class="{ 'sm-mr-2': index + 1 !== works.length }"
+            data-aos="fade-up"
+            :data-aos-duration="1000"
+            :data-aos-delay="index * 200"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>
@@ -102,6 +105,9 @@ watch(innerWidth, () => {
             :key="item"
             class="h-[270px] w-full border-8 border-black sm:mr-2 sm:w-[263px]"
             :class="{ 'sm-mr-2': index + 1 !== collection.length }"
+            data-aos="fade-up"
+            :data-aos-duration="1000"
+            :data-aos-delay="index * 200"
           >
             <img :src="handleImg(`art${item}.jpg`)" alt="works" class="h-full w-full">
           </li>

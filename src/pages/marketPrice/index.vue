@@ -26,7 +26,7 @@ const handleTarget = (title: string) => {
     <p class="mb-8 font-sans font-semibold md:mb-12">
       NFT系列藝術作品排行榜！全球注目指標
     </p>
-    <table data-aos="fade-up" data-aos-duration="2000" class="hidden table-auto md:block">
+    <table data-aos="fade-up" data-aos-duration="1000" class="hidden table-auto md:block">
       <thead>
         <tr>
           <th />
@@ -85,7 +85,7 @@ const handleTarget = (title: string) => {
         </tr>
       </tbody>
     </table>
-    <ul class="mb-12 w-full bg-white md:hidden">
+    <ul data-aos="fade-up" data-aos-duration="1000" class="mb-12 w-full bg-white md:hidden">
       <li v-for="(item, index) in marketPriceData" :key="item.title" @click="handleTarget(item.title)">
         <div
           class="flex cursor-pointer items-center justify-between overflow-hidden border-2 border-black hover:bg-backound"
